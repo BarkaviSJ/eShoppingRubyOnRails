@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<table>
+    <tr>
+      <th><a href="/products?filter_by_category=babycare">Baby Care</a></th>
+      <th><a href="/products?filter_by_category=bags">Bags and Wallets</a></th>
+      <th><a href="/products?filter_by_category=computers">Computers and Accessories</a></th>
+      <th><a href="/products?filter_by_category=furniture">Furniture</a></th>
+      <th><a href="/products?filter_by_category=kitchen">Kitchen and Dining</a></th>
+      <th><a href="/products?filter_by_category=sports">Sports and Fitness</a></th>
+      <th><a href="/products?filter_by_category=watches">Watches</a></th>
+    </tr>
+</table>
+<hr>
+<h2>Featured Brands by our customers with highest rating </h2>
+<%= bar_chart @products.where("rating >= 4.7").group(:brand).count %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Product Category</th>
+      <th>Product details</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.brand %></td>
+        <td><%= product.product_category %></td>
+        <td><%= link_to 'View Product', product %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+        
+<br>
+
+<!---pagination for products page---->
+<div>  
+  <% 1.upto(Product.count/ProductsController::PRODUCTS_PER_PAGE) do |i| %>
+      <%= link_to i.to_s + " | ",products_path(page: i ) %>
+  <% end %>
+
+</div>

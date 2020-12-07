@@ -1,0 +1,37 @@
+
+<body>	
+	<h1>Shopping Cart</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product name</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Remove this item</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+	<% @shopping_cart.each do |product| %>
+	<tr>
+		<td>td<%= product.id %></td>
+		<td><%= product.product_name %></td>
+		<td><%= product.brand %></td>
+		<td><%= product.product_category %></td>
+		<td>£<%= product.price %></td>
+		<td><%= link_to 'Remove item', shopping_cart_path(id: product.id), method:"delete"%></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+<%= link_to 'Check Out', stores_path %>
+<%= link_to 'Back to Shopping', products_path %>
+</body>
+
+<p>Have a look at our Furniture for exciting Christmas/New Year offers upto 50%</p>

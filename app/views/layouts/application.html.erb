@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+   
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name ="viewport" content="width=device-width, initial-scale=1"%> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+      <title>Online shopping in U.K.</title>
+      <header class="navbar navbar-default">
+          <div class="container-fluid">
+                <%= link_to "Sukha - A happy place to shop", root_path, id: "logo" %>
+              <nav>
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+                <div class="nav navbar-nav navbar-right collapse navbar-collapse"    
+                    id="bs-example-navbar-collapse-1">
+                      <div class="search-centered">
+                      <form action="/">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit">🔎</button>
+                      </form>
+                    </div>
+                  <ul class="nav navbar-nav navbar-right">  
+                        <% if current_customer %>
+                        <li><a>Logged in from <%= current_customer.email %> account</a></li>
+                        <li><%= link_to "Sign out", destroy_customer_session_path, method: "delete" %></li>
+                        <% else %>
+                        <li><%= link_to "Sign up", new_customer_registration_path %></li>
+                        <li><%= link_to "Sign in", new_customer_session_path %></li>
+                    <% end %>
+                    <li><%= link_to "Home", root_path %></li>
+                    <li><%= link_to "Shopping Cart", shopping_cart_url %></li>
+                    
+                  </ul>
+                </div>
+              </nav>
+          </div>
+      </header>
+
+      <div class="container">
+
+      
+        <%= yield %>
+      </div>
+    
+  </body>
+</html>

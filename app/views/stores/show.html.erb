@@ -1,0 +1,13 @@
+
+<!--This page is for customers to purchase the products from their preferred location and submitting the form will render the live map location in the shipping_detail-->
+<body>
+
+	<h1>Please select your nearest store</h1>
+	<h2>You can either avail for home delivery or Click and Collect option </h2>
+	<%= form_with(scope: "store") do |f| %>
+		<%= f.select :id, @stores.map { |s| [s.store_name, s.id, {latitude:s.latitude, longitude:s.longitude}]}, {} %>
+		<%= f.submit %>
+	<% end %>
+
+	<%= link_to 'Products', products_path %>       
+</body>
