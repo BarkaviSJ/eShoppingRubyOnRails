@@ -31,7 +31,7 @@ ____
 Run the following commands:
 
 1. cd workspace
-2. git clone -b master https://github.com/BarkaviSJ/sukhashopping.git 
+2. git clone -b master https://github.com/BarkaviSJ/sukhashopping.git (because the master sub-branch of main has the complete code)
 3. cd sukhashopping
 4. bundle install 
 5. yarn install --check-files
@@ -73,10 +73,10 @@ b. rails generate migration AddTableToTheSchema
 14.	heroku run rake db:setup – PG::ConnectionBad: FATAL - wrong
 15.	Ensure that the databse.yml file has the username and password removed both from default and production and take the URL it states in yml for production
 16.	heroku addons:create heroku-postgresql:hobby-dev – finally created postgressql database with the name “HEROKU_POSTGRESQL_COPPER_URL” Paste this in database.yml file
-17.	Git steps to be followed for commits
+17.	Repeated git steps for commits
 18.	heroku run rake db:schema:load – to be used only for first time
 19.	heroku run rake db:migrate
-20.	heroku run rake db:seed
+20.	heroku run rake db:seed - this need to be updated everytime the database changes are made
 
 
 # WORKING APPLICATION
