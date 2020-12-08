@@ -72,7 +72,7 @@ b. rails generate migration AddTableToTheSchema
 13.	git push heroku base:main to commit from development branch
 14.	heroku run rake db:setup – PG::ConnectionBad: FATAL - wrong
 15.	Ensure that the databse.yml file has the username and password removed both from default and production and take the URL it states in yml for production
-16.	heroku addons:create heroku-postgresql:hobby-dev – finally created postgressql database with the name “HEROKU_POSTGRESQL_COPPER_URL” Paste this in database.yml file
+16.	heroku addons:create heroku-postgresql:hobby-dev – finally created postgressql database with the name “HEROKU_POSTGRESQL_COPPER_URL” Paste this URL in database.yml file - until this step was completed, the error mentioned in step 14 will occur.
 17.	Repeated git steps for commits
 18.	heroku run rake db:schema:load – to be used only for first time
 19.	heroku run rake db:migrate
