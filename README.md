@@ -1,9 +1,9 @@
 # README
-SUKHA - A HAPPY PLACE TO SHOPPING APPLICATION :
+## SUKHA - A HAPPY PLACE TO SHOPPING APPLICATION :
 ###### *Designed, developed and deployed by: Barkavi Sundararajan - Student ID: 51989442
 
 ### About the application:
-This application is a ecommerce application that sells 6 different types of product categories across U.K. and has warehouse in ober 200 locations. It shows  relationship between different tables, separate login for customers and admin dashboard. It has live map, admin dashboard charts, featured product graph for customers.
+This application is an ecommerce application that sells 6 different types of product categories across U.K. and has warehouses in over 200 locations. It shows  relationship between different tables, separate login for customers and admin dashboard. It has live maps, admin dashboard charts, search filter and featured product graph for customers, capturing session details of customers with other security measures and test cases.
 
 ## Deployed application
 The live application has been deployed on the heroku platform in postgres database and can be accessed through the following link: https://sukha-happy-shopping.herokuapp.com/
