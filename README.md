@@ -1,7 +1,6 @@
-# README
 
 # README
-## SUKHA - A HAPPY PLACE TO SHOPPING APPLICATION :
+## SUKHA - A HAPPY PLACE TO SHOPPING APPLICATION USING RUBY ON RAILS :
 ###### *Designed, developed and deployed by: Barkavi Sundararajan - Student ID: 51989442
 
 ### About the application:
